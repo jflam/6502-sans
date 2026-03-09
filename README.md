@@ -18,29 +18,31 @@ Type hexadecimal bytes into an OpenType-aware editor and watch them reshape live
 
 This is especially fun in TextEdit: select `6502 Sans`, start typing hex bytes, and the font rewrites them on screen as you go.
 
-One short Commodore 64-flavored example is a tiny `CHROUT` routine that clears the screen, switches to light blue text, prints `C64`, and returns:
+A better code-golf demo than a straight `CHROUT` loop is the 12-byte PETSCII-to-ASCII fast path in [`examples/petscii_to_ascii.asm`](./examples/petscii_to_ascii.asm). It assumes the caller already handled the NUL terminator and targets the common printable-text path. The trick is that `$20-$3F` already have ASCII bit 5 set, so `ORA #$20` only changes `$41-$5A`, while the high PETSCII letter block is just the same letters with bit 7 set and collapses with `AND #$7F`.
 
 ```text
-A99320D2FFA99A20D2FFA94320D2FFA93620D2FFA93420D2FF60
+3007
+C95B
+B002j
+0920
+60
+297F
+60
 ```
 
 That shapes into:
 
 ```asm
-LDA #$93
-JSR $FFD2
-LDA #$9A
-JSR $FFD2
-LDA #$43
-JSR $FFD2
-LDA #$36
-JSR $FFD2
-LDA #$34
-JSR $FFD2
+BMI *+07
+CMP #$5B
+BCS *+02
+ORA #$20
+RTS
+AND #$7F
 RTS
 ```
 
-On a C64, `CHROUT` lives at `$FFD2`, `$93` is the clear-screen PETSCII control code, and `$9A` selects light blue text.
+The same example file also includes a small `$FB/$FC` buffer-walking wrapper around that core helper if you want the less golfed, in-place version.
 
 ## Build
 
