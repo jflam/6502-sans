@@ -1,0 +1,606 @@
+[
+  [
+    "BRK",
+    "00"
+  ],
+  [
+    "ORA ($n,X)",
+    "01 n"
+  ],
+  [
+    "ORA <$n",
+    "05 n"
+  ],
+  [
+    "ASL <$n",
+    "06 n"
+  ],
+  [
+    "PHP",
+    "08"
+  ],
+  [
+    "ORA #$n",
+    "09 n"
+  ],
+  [
+    "ASL A",
+    "0A"
+  ],
+  [
+    "ORA $nn",
+    "0D nn nn"
+  ],
+  [
+    "ASL $nn",
+    "0E nn nn"
+  ],
+  [
+    "BPL *o",
+    "10 o"
+  ],
+  [
+    "ORA ($n),Y",
+    "11 n"
+  ],
+  [
+    "ORA <$n,X",
+    "15 n"
+  ],
+  [
+    "ASL <$n,X",
+    "16 n"
+  ],
+  [
+    "CLC",
+    "18"
+  ],
+  [
+    "ORA $nn,Y",
+    "19 nn nn"
+  ],
+  [
+    "ORA $nn,X",
+    "1D nn nn"
+  ],
+  [
+    "ASL $nn,X",
+    "1E nn nn"
+  ],
+  [
+    "JSR $nn",
+    "20 nn nn"
+  ],
+  [
+    "AND ($n,X)",
+    "21 n"
+  ],
+  [
+    "BIT <$n",
+    "24 n"
+  ],
+  [
+    "AND <$n",
+    "25 n"
+  ],
+  [
+    "ROL <$n",
+    "26 n"
+  ],
+  [
+    "PLP",
+    "28"
+  ],
+  [
+    "AND #$n",
+    "29 n"
+  ],
+  [
+    "ROL A",
+    "2A"
+  ],
+  [
+    "BIT $nn",
+    "2C nn nn"
+  ],
+  [
+    "AND $nn",
+    "2D nn nn"
+  ],
+  [
+    "ROL $nn",
+    "2E nn nn"
+  ],
+  [
+    "BMI *o",
+    "30 o"
+  ],
+  [
+    "AND ($n),Y",
+    "31 n"
+  ],
+  [
+    "AND <$n,X",
+    "35 n"
+  ],
+  [
+    "ROL <$n,X",
+    "36 n"
+  ],
+  [
+    "SEC",
+    "38"
+  ],
+  [
+    "AND $nn,Y",
+    "39 nn nn"
+  ],
+  [
+    "AND $nn,X",
+    "3D nn nn"
+  ],
+  [
+    "ROL $nn,X",
+    "3E nn nn"
+  ],
+  [
+    "RTI",
+    "40"
+  ],
+  [
+    "EOR ($n,X)",
+    "41 n"
+  ],
+  [
+    "EOR <$n",
+    "45 n"
+  ],
+  [
+    "LSR <$n",
+    "46 n"
+  ],
+  [
+    "PHA",
+    "48"
+  ],
+  [
+    "EOR #$n",
+    "49 n"
+  ],
+  [
+    "LSR A",
+    "4A"
+  ],
+  [
+    "JMP $nn",
+    "4C nn nn"
+  ],
+  [
+    "EOR $nn",
+    "4D nn nn"
+  ],
+  [
+    "LSR $nn",
+    "4E nn nn"
+  ],
+  [
+    "BVC *o",
+    "50 o"
+  ],
+  [
+    "EOR ($n),Y",
+    "51 n"
+  ],
+  [
+    "EOR <$n,X",
+    "55 n"
+  ],
+  [
+    "LSR <$n,X",
+    "56 n"
+  ],
+  [
+    "CLI",
+    "58"
+  ],
+  [
+    "EOR $nn,Y",
+    "59 nn nn"
+  ],
+  [
+    "EOR $nn,X",
+    "5D nn nn"
+  ],
+  [
+    "LSR $nn,X",
+    "5E nn nn"
+  ],
+  [
+    "RTS",
+    "60"
+  ],
+  [
+    "ADC ($n,X)",
+    "61 n"
+  ],
+  [
+    "ADC <$n",
+    "65 n"
+  ],
+  [
+    "ROR <$n",
+    "66 n"
+  ],
+  [
+    "PLA",
+    "68"
+  ],
+  [
+    "ADC #$n",
+    "69 n"
+  ],
+  [
+    "ROR A",
+    "6A"
+  ],
+  [
+    "JMP ($nn)",
+    "6C nn nn"
+  ],
+  [
+    "ADC $nn",
+    "6D nn nn"
+  ],
+  [
+    "ROR $nn",
+    "6E nn nn"
+  ],
+  [
+    "BVS *o",
+    "70 o"
+  ],
+  [
+    "ADC ($n),Y",
+    "71 n"
+  ],
+  [
+    "ADC <$n,X",
+    "75 n"
+  ],
+  [
+    "ROR <$n,X",
+    "76 n"
+  ],
+  [
+    "SEI",
+    "78"
+  ],
+  [
+    "ADC $nn,Y",
+    "79 nn nn"
+  ],
+  [
+    "ADC $nn,X",
+    "7D nn nn"
+  ],
+  [
+    "ROR $nn,X",
+    "7E nn nn"
+  ],
+  [
+    "STA ($n,X)",
+    "81 n"
+  ],
+  [
+    "STY <$n",
+    "84 n"
+  ],
+  [
+    "STA <$n",
+    "85 n"
+  ],
+  [
+    "STX <$n",
+    "86 n"
+  ],
+  [
+    "DEY",
+    "88"
+  ],
+  [
+    "TXA",
+    "8A"
+  ],
+  [
+    "STY $nn",
+    "8C nn nn"
+  ],
+  [
+    "STA $nn",
+    "8D nn nn"
+  ],
+  [
+    "STX $nn",
+    "8E nn nn"
+  ],
+  [
+    "BCC *o",
+    "90 o"
+  ],
+  [
+    "STA ($n),Y",
+    "91 n"
+  ],
+  [
+    "STY <$n,X",
+    "94 n"
+  ],
+  [
+    "STA <$n,X",
+    "95 n"
+  ],
+  [
+    "STX <$n,Y",
+    "96 n"
+  ],
+  [
+    "TYA",
+    "98"
+  ],
+  [
+    "STA $nn,Y",
+    "99 nn nn"
+  ],
+  [
+    "TXS",
+    "9A"
+  ],
+  [
+    "STA $nn,X",
+    "9D nn nn"
+  ],
+  [
+    "LDY #$n",
+    "A0 n"
+  ],
+  [
+    "LDA ($n,X)",
+    "A1 n"
+  ],
+  [
+    "LDX #$n",
+    "A2 n"
+  ],
+  [
+    "LDY <$n",
+    "A4 n"
+  ],
+  [
+    "LDA <$n",
+    "A5 n"
+  ],
+  [
+    "LDX <$n",
+    "A6 n"
+  ],
+  [
+    "TAY",
+    "A8"
+  ],
+  [
+    "LDA #$n",
+    "A9 n"
+  ],
+  [
+    "TAX",
+    "AA"
+  ],
+  [
+    "LDY $nn",
+    "AC nn nn"
+  ],
+  [
+    "LDA $nn",
+    "AD nn nn"
+  ],
+  [
+    "LDX $nn",
+    "AE nn nn"
+  ],
+  [
+    "BCS *o",
+    "B0 o"
+  ],
+  [
+    "LDA ($n),Y",
+    "B1 n"
+  ],
+  [
+    "LDY <$n,X",
+    "B4 n"
+  ],
+  [
+    "LDA <$n,X",
+    "B5 n"
+  ],
+  [
+    "LDX <$n,Y",
+    "B6 n"
+  ],
+  [
+    "CLV",
+    "B8"
+  ],
+  [
+    "LDA $nn,Y",
+    "B9 nn nn"
+  ],
+  [
+    "TSX",
+    "BA"
+  ],
+  [
+    "LDY $nn,X",
+    "BC nn nn"
+  ],
+  [
+    "LDA $nn,X",
+    "BD nn nn"
+  ],
+  [
+    "LDX $nn,Y",
+    "BE nn nn"
+  ],
+  [
+    "CPY #$n",
+    "C0 n"
+  ],
+  [
+    "CMP ($n,X)",
+    "C1 n"
+  ],
+  [
+    "CPY <$n",
+    "C4 n"
+  ],
+  [
+    "CMP <$n",
+    "C5 n"
+  ],
+  [
+    "DEC <$n",
+    "C6 n"
+  ],
+  [
+    "INY",
+    "C8"
+  ],
+  [
+    "CMP #$n",
+    "C9 n"
+  ],
+  [
+    "DEX",
+    "CA"
+  ],
+  [
+    "CPY $nn",
+    "CC nn nn"
+  ],
+  [
+    "CMP $nn",
+    "CD nn nn"
+  ],
+  [
+    "DEC $nn",
+    "CE nn nn"
+  ],
+  [
+    "BNE *o",
+    "D0 o"
+  ],
+  [
+    "CMP ($n),Y",
+    "D1 n"
+  ],
+  [
+    "CMP <$n,X",
+    "D5 n"
+  ],
+  [
+    "DEC <$n,X",
+    "D6 n"
+  ],
+  [
+    "CLD",
+    "D8"
+  ],
+  [
+    "CMP $nn,Y",
+    "D9 nn nn"
+  ],
+  [
+    "CMP $nn,X",
+    "DD nn nn"
+  ],
+  [
+    "DEC $nn,X",
+    "DE nn nn"
+  ],
+  [
+    "CPX #$n",
+    "E0 n"
+  ],
+  [
+    "SBC ($n,X)",
+    "E1 n"
+  ],
+  [
+    "CPX <$n",
+    "E4 n"
+  ],
+  [
+    "SBC <$n",
+    "E5 n"
+  ],
+  [
+    "INC <$n",
+    "E6 n"
+  ],
+  [
+    "INX",
+    "E8"
+  ],
+  [
+    "SBC #$n",
+    "E9 n"
+  ],
+  [
+    "NOP",
+    "EA"
+  ],
+  [
+    "CPX $nn",
+    "EC nn nn"
+  ],
+  [
+    "SBC $nn",
+    "ED nn nn"
+  ],
+  [
+    "INC $nn",
+    "EE nn nn"
+  ],
+  [
+    "BEQ *o",
+    "F0 o"
+  ],
+  [
+    "SBC ($n),Y",
+    "F1 n"
+  ],
+  [
+    "SBC <$n,X",
+    "F5 n"
+  ],
+  [
+    "INC <$n,X",
+    "F6 n"
+  ],
+  [
+    "SED",
+    "F8"
+  ],
+  [
+    "SBC $nn,Y",
+    "F9 nn nn"
+  ],
+  [
+    "SBC $nn,X",
+    "FD nn nn"
+  ],
+  [
+    "INC $nn,X",
+    "FE nn nn"
+  ]
+]
