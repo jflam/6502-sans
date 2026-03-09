@@ -59,7 +59,7 @@ Then generate the instruction table and build the font:
 ./.venv/bin/python gen.py ./resources/instructions.json
 ```
 
-The generated `.ttf` is copied to `~/.local/share/fonts/` and can also be found at `./test/6502-sans.ttf`.
+The generated `.ttf` is copied to `~/.local/share/fonts/` and also written to `./test/6502-sans.ttf`.
 
 ## Notes
 
@@ -91,6 +91,7 @@ These sample byte streams shape as expected with `hb-shape`:
 - Original concept, Z80 version, and generator architecture: [nevesnunes/z80-sans](https://github.com/nevesnunes/z80-sans)
 - Base fonts: Droid Sans Mono and Noto Sans Mono
 - 6502 opcode source: [`py65`](https://github.com/mnaberez/py65)
+- Release engineering attribution: `gpt-5.4/xhigh`
 
 ## License
 

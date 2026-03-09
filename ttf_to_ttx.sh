@@ -2,7 +2,7 @@
 
 set -eux
 
-export PATH="$PWD/.venv/bin:$PATH"
+repo_root="$PWD"
 
 rm -f .fontcustom-manifest.json
 mkdir -p ./fontcustom
@@ -11,4 +11,4 @@ fontforge -lang=py -script ./scripts/build_font.py ./out_svg/ ./fontcustom/fontc
 
 cd ./fontcustom
 last_ttf=$(find . -iname 'fontcustom_*.ttf' -print0 | xargs -r -0 ls -1 -t | head -1)
-ttx "$last_ttf"
+"$repo_root/.venv/bin/python" -m fontTools.ttx "$last_ttf"
