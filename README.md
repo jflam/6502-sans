@@ -18,7 +18,7 @@ Type hexadecimal bytes into an OpenType-aware editor and watch them reshape live
 
 This is especially fun in TextEdit: select `6502 Sans`, start typing hex bytes, and the font rewrites them on screen as you go.
 
-A better code-golf demo than a straight `CHROUT` loop is the 12-byte PETSCII-to-ASCII fast path in [`examples/petscii_to_ascii.asm`](./examples/petscii_to_ascii.asm). It assumes the caller already handled the NUL terminator and targets the common printable-text path. The trick is that `$20-$3F` already have ASCII bit 5 set, so `ORA #$20` only changes `$41-$5A`, while the high PETSCII letter block is just the same letters with bit 7 set and collapses with `AND #$7F`.
+A better code-golf demo than a straight `CHROUT` loop is the 12-byte PETSCII-to-ASCII fast path in [`examples/petscii_to_ascii_fast.asm`](./examples/petscii_to_ascii_fast.asm). It assumes the caller already handled the NUL terminator and targets the common printable-text path. The trick is that `$20-$3F` already have ASCII bit 5 set, so `ORA #$20` only changes `$41-$5A`, while the high PETSCII letter block is just the same letters with bit 7 set and collapses with `AND #$7F`.
 
 ```text
 3007
@@ -42,7 +42,7 @@ AND #$7F
 RTS
 ```
 
-The same example file also includes a small `$FB/$FC` buffer-walking wrapper around that core helper if you want the less golfed, in-place version.
+For the readable, less optimized version with an in-place `$FB/$FC` buffer walker, see [`examples/petscii_to_ascii.asm`](./examples/petscii_to_ascii.asm). The golfed fast path above lives in [`examples/petscii_to_ascii_fast.asm`](./examples/petscii_to_ascii_fast.asm).
 
 ## Build
 

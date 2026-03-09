@@ -1,33 +1,43 @@
-; PETSCII -> ASCII fast path.
+; Readable PETSCII -> ASCII conversion for the common text subset.
+;
+; This version favors clarity over byte count. It leaves punctuation, digits,
+; and control codes unchanged, but rewrites the two PETSCII alphabetic ranges
+; that differ from ASCII:
+;
+;   $41-$5A -> $61-$7A  ; low PETSCII alpha block becomes ASCII lowercase
+;   $C1-$DA -> $41-$5A  ; high PETSCII alpha block becomes ASCII uppercase
 ;
 ; Input:
-;   A holds one PETSCII byte.
+;   A = one PETSCII byte
 ;
 ; Output:
-;   A holds the ASCII byte for the common printable-text path.
-;
-; Caveats:
-;   The caller handles the NUL terminator before calling this helper.
-;   This is the code-golfed path, so control codes and '@' are out of scope.
-;
-; Trick:
-;   $20-$3F already have bit 5 set, so ORA #$20 is a no-op there and only
-;   changes $41-$5A into ASCII lowercase. The high PETSCII letter block is the
-;   same letters with bit 7 set, so BMI + AND #$7F folds it to ASCII uppercase.
+;   A = ASCII byte for the common text path
 
-petscii_to_ascii_fast:
-    BMI high_block
+petscii_to_ascii:
+    CMP #$41
+    BCC maybe_high_block
     CMP #$5B
-    BCS done
+    BCS maybe_high_block
     ORA #$20
+    RTS
+
+maybe_high_block:
+    CMP #$C1
+    BCC done
+    CMP #$DB
+    BCS done
+    AND #$7F
+
 done:
     RTS
 
-high_block:
-    AND #$7F
-    RTS
-
 ; Demo wrapper: convert a NUL-terminated buffer in place through $FB/$FC.
+;
+; Input:
+;   $FB/$FC points at the PETSCII buffer.
+;
+; Output:
+;   The same buffer is rewritten in place as ASCII-friendly text.
 
 petscii_buffer_to_ascii:
     LDY #$00
@@ -35,7 +45,7 @@ petscii_buffer_to_ascii:
 loop:
     LDA ($FB),Y
     BEQ buffer_done
-    JSR petscii_to_ascii_fast
+    JSR petscii_to_ascii
     STA ($FB),Y
     INY
     BNE loop
